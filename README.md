@@ -3,6 +3,8 @@
 Find an API:
 Search for a public, free-to-use API.
 
+https://rapidapi.com/omgvamp/api/hearthstone/
+
 You will need to make two calls to this API:
 to fetch an array of results
 to fetch a single result using an id, name, or other property.
