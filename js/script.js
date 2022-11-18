@@ -1,7 +1,7 @@
 const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/druid";
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + url;
+const resultsContainer = document.querySelector(".results");
 
-const resultsContainer = document.querySelector("results");
 
 
 const options = {
@@ -12,40 +12,35 @@ const options = {
 	}
 };
 
-/*fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/info', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));*/
 
-
-
-
-async function getHeartStoneData(){
+async function getHeartStoneData() {
+    
     const response = await fetch(corsEnabledUrl, options);
     const data = await response.json();
     
     console.log(data)
 
-    resultsContainer.innerHTML = "";
+    
 
-    for(let i = 0; i < 5; i++){
-            console.log(data[i].name)
-            console.log(data[i].type)
-            console.log(data[i].cardSet)
+    for(let i = 0; i < 6; i++){
+    
 
-            const nameCard = data[i].name;
-            const typeCard = data[i].type;
-            const cardSet = data[i].cardSet;
+            console.log(data[i].name);
+            console.log(data[i].type);
+            console.log(data[i].cardSet);
+    
+        resultsContainer.innerHTML +=  `<div class="result">${data[i].name}</div>`;
 
-
-            resultsContainer.innerHTML += "<div class='result'>"+"<ul>"+"<li>"
-            +data[i].name
-            +"</li>"+"<li>"+data[i].type+"</li>"+"<li>"
-            +data[i].cardSet+"</li>"+"</ul>"+"</div>"; 
-
-
-    };
+    }
        
 };
 
 getHeartStoneData();
+
+
+
+
+/*fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/info', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));*/
