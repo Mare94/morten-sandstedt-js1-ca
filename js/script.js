@@ -1,7 +1,7 @@
 const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/druid";
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + url;
 
-
+const resultsContainer = document.querySelector("results");
 
 
 const options = {
@@ -26,12 +26,26 @@ async function getHeartStoneData(){
     
     console.log(data)
 
+    resultsContainer.innerHTML = "";
+
     for(let i = 0; i < 5; i++){
             console.log(data[i].name)
             console.log(data[i].type)
             console.log(data[i].cardSet)
-    }
-    
-}
+
+            const nameCard = data[i].name;
+            const typeCard = data[i].type;
+            const cardSet = data[i].cardSet;
+
+
+            resultsContainer.innerHTML += "<div class='result'>"+"<ul>"+"<li>"
+            +data[i].name
+            +"</li>"+"<li>"+data[i].type+"</li>"+"<li>"
+            +data[i].cardSet+"</li>"+"</ul>"+"</div>"; 
+
+
+    };
+       
+};
 
 getHeartStoneData();
