@@ -2,7 +2,7 @@ const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/druid";
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + url;
 const resultsContainer = document.querySelector(".results");
 
-
+// needed to make the API work, different for each API
 
 const options = {
 	method: 'GET',
@@ -13,14 +13,14 @@ const options = {
 };
 
 
+//API call to showcase heartstone druid class
+
 async function getHeartStoneData() {
     
     const response = await fetch(corsEnabledUrl, options);
     const data = await response.json();
     
     console.log(data)
-
-    
 
     for(let i = 0; i < 6; i++){
     
