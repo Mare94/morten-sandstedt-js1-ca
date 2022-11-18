@@ -22,10 +22,16 @@ const options = {
 
 async function getHeartStoneData(){
     const response = await fetch(corsEnabledUrl, options);
-    const results = await response.json();
+    const data = await response.json();
+    
+    console.log(data)
 
-    console.log(results)
-    console.log(results[0].name)
+    for(let i = 0; i < 5; i++){
+            console.log(data[i].name)
+            console.log(data[i].type)
+            console.log(data[i].cardSet)
+    }
+    
 }
 
 getHeartStoneData();
