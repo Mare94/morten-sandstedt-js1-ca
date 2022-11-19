@@ -3,9 +3,9 @@ const detailContainer = document.querySelector(".card-result");
 const queryString = document.location.search;
 
 const params = new URLSearchParams(queryString);
-const name = params.get("name");
+const urlName = params.get("name");
 
-const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/";
+const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/druid/";
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + url;
 
 const options = {
@@ -16,17 +16,19 @@ const options = {
 	}
 };
 
-const cardUrl = corsEnabledUrl + cardId;
+const cardUrl = corsEnabledUrl + urlName;
+
+console.log(cardUrl);
 
 async function cardDetail(){
-    try{
-
-        const response = await fetch(cardUrl);
+    
+        const response = await fetch(cardUrl, options);
         const details = await response.json();
 
         console.log(details);
 
         detailContainer.innerHTML = `
+                                    <div class="card-result">
                                     <h1>${details.name}</h1>
                                     <h2>
                                     <div>${details.artist}</div>
@@ -35,14 +37,9 @@ async function cardDetail(){
                                     <div>${details.type}</div>
                                     <div>${details.text}</div>
                                     </h2>
-                                    `
+                                    </div>
+                                    `;
 
-
-
-
-    }
-    catch(error){
-        console.log(error);
-        detailContainer.innerHTML = message("error", error);
-    }
 }
+
+cardDetail();
