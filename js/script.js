@@ -1,6 +1,6 @@
+const resultsContainer = document.querySelectorAll(".results");
 const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/druid";
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + url;
-const resultsContainer = document.querySelectorAll(".results");
 
 // needed to make the API work, different for each API
 
