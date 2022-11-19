@@ -25,6 +25,17 @@ async function getHeartStoneData() {
 
     for(let i = 0; i < 5; i++){
     
+        if(i === 4){
+            function removeElementsByClass(className){
+                const elements = document.getElementsByClassName(className);
+                while(elements.length > 0){
+                    elements[0].parentNode.removeChild(elements[0])
+                }
+            }
+
+            removeElementsByClass('loading');
+        }
+
             console.log(data[i].name);
             console.log(data[i].type);
             console.log(data[i].cardSet);
