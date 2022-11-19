@@ -3,9 +3,9 @@ const detailContainer = document.querySelector(".card-result");
 const queryString = document.location.search;
 
 const params = new URLSearchParams(queryString);
-const cardId = params.get("cardId");
+const name = params.get("name");
 
-const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/druid";
+const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/";
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + url;
 
 const options = {

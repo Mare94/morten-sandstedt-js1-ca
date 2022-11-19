@@ -29,7 +29,7 @@ async function getHeartStoneData() {
             console.log(data[i].type);
             console.log(data[i].cardSet);
     
-        resultsContainer.innerHTML +=  `<a href="details.html?cardId=${data.cardId}" class='result'>
+        resultsContainer.innerHTML +=  `<a href="details.html?name=${data.name}" class='result'>
                                         <h2>Name: ${data[i].name}</h2>
                                         <p>Type: ${data[i].type}</p>
                                         <p>Cardset: ${data[i].cardSet}</p>
