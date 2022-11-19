@@ -1,4 +1,4 @@
-const resultsContainer = document.querySelectorAll(".results");
+const resultsContainer = document.querySelector(".results");
 const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/druid";
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + url;
 
@@ -17,7 +17,8 @@ const options = {
 
 async function getHeartStoneData() {
     
-    const response = await fetch(corsEnabledUrl, options);
+    try{
+        const response = await fetch(corsEnabledUrl, options);
     const data = await response.json();
     
     console.log(data)
@@ -28,9 +29,19 @@ async function getHeartStoneData() {
             console.log(data[i].type);
             console.log(data[i].cardSet);
     
-        resultsContainer.innerHTML +=  `<div class='result'><h2>Name: ${data[i].name}</h2><p>Type: ${data[i].type}</p><p>Cardset: ${data[i].cardSet}</p></div>`;
+        resultsContainer.innerHTML +=  `<a href="details.html?cardId=${data.cardId}" class='result'>
+                                        <h2>Name: ${data[i].name}</h2>
+                                        <p>Type: ${data[i].type}</p>
+                                        <p>Cardset: ${data[i].cardSet}</p>
+                                        </a>`;
 
     }
+    }
+    catch(error){
+        console.log(error);
+        resultsContainer.innerHTML = message("error", error);
+    }
+    
        
 };
 

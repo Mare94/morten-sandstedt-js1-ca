@@ -21,14 +21,28 @@ h1{
     flex-wrap: wrap;
 }
 
+.card-result{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
 .result{
     margin: 1rem;
     padding: 1rem;
     max-width: 250px;
-    background: white;
+    background: gray;
     border: 1px gray;
     border-radius: 1px;
 }
+
+.back-nav{
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--blue);
+}
+
+
 
 .error{
     border: 1px red;
