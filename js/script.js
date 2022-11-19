@@ -28,7 +28,7 @@ async function getHeartStoneData() {
             console.log(data[i].type);
             console.log(data[i].cardSet);
     
-        resultsContainer.innerHTML +=  `<div class='result'>${data[i].name}</div>`;
+        resultsContainer.innerHTML +=  `<div class='result'><h2>Name: ${data[i].name}</h2><p>Type: ${data[i].type}</p><p>Cardset: ${data[i].cardSet}</p></div>`;
 
     }
        
