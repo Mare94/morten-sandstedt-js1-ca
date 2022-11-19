@@ -8,6 +8,10 @@ const urlName = params.get("name");
 const url = "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/druid/";
 const corsEnabledUrl = "https://noroffcors.onrender.com/" + url;
 
+const cardUrl = corsEnabledUrl + urlName;
+
+console.log(cardUrl);
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -16,9 +20,6 @@ const options = {
 	}
 };
 
-const cardUrl = corsEnabledUrl + urlName;
-
-console.log(cardUrl);
 
 async function cardDetail(){
     
@@ -28,7 +29,7 @@ async function cardDetail(){
         console.log(details);
 
         detailContainer.innerHTML = `
-                                    <div class="card-result">
+                                    <div class="detail-result">
                                     <h1>${details.name}</h1>
                                     <h2>
                                     <div>${details.artist}</div>
@@ -37,8 +38,7 @@ async function cardDetail(){
                                     <div>${details.type}</div>
                                     <div>${details.text}</div>
                                     </h2>
-                                    </div>
-                                    `;
+                                    </div>`
 
 }
 
