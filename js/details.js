@@ -12,6 +12,8 @@ const cardUrl = corsEnabledUrl + urlName;
 
 console.log(cardUrl);
 
+// const containing the method and API key, needed to acces the API
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -20,6 +22,7 @@ const options = {
 	}
 };
 
+//function calls the API
 
 async function getCardDetail(){
     
@@ -34,6 +37,8 @@ async function getCardDetail(){
 }
 
 getCardDetail();
+
+// function creates HTML from the previous API call
 
 function createHtml(details){
     
