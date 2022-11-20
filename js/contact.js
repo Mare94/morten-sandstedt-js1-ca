@@ -33,6 +33,8 @@ function validateForm(event){
     } else{
         emailError.style.display = "block";
     }
+
+    console.log("it works");
 }
 
 form.addEventListener("submit", validateForm);

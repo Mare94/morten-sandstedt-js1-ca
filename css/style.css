@@ -51,7 +51,16 @@ h1{
     border-bottom: 1px solid var(--white);
 }
 
-
+button{
+    background: rgb(11, 91, 133);
+    border: none;
+    width: 200px;
+    padding: 1rem;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 0.2rem;
+}
 
 .error{
     border: 1px red;
