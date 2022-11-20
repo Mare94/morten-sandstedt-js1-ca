@@ -12,7 +12,7 @@ const cardUrl = corsEnabledUrl + urlName;
 
 console.log(cardUrl);
 
-// const containing the method and API key, needed to acces the API
+// needed to make the API work, different for each API
 
 const options = {
 	method: 'GET',
