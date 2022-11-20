@@ -5,7 +5,7 @@
 body{
     padding: 20px 40px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: gray;
+    background-color: rgb(30, 32, 32);
 }
 
 .container{
