@@ -39,6 +39,7 @@ async function getCardDetail(){
 getCardDetail();
 
 // function creates HTML from the previous API call
+// if statement used to remove loading indicator
 
 function createHtml(details){
     

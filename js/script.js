@@ -14,6 +14,8 @@ const options = {
 
 
 //API call to showcase heartstone druid class
+// if statement used to remove loading indicator
+
 
 async function getHeartStoneData() {
     
