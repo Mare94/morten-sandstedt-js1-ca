@@ -26,13 +26,20 @@ const options = {
 
 async function getCardDetail(){
     
-        const response = await fetch(cardUrl, options);
+        try{
+
+                const response = await fetch(cardUrl, options);
         const details = await response.json();
     
 
         console.log(details);
         
         createHtml(details);
+        }
+        catch(error){
+                console.log("An error occurred");
+        resultsContainer.innerHTML = displayError("An error with the API has occurred");
+        }
 
 }
 
