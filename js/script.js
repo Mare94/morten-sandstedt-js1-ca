@@ -51,8 +51,8 @@ async function getHeartStoneData() {
     }
     }
     catch(error){
-        console.log(error);
-        resultsContainer.innerHTML = message("error", error);
+        console.log("An error occurred");
+        resultsContainer.innerHTML = displayError("An error with the API has occurred");
     }
     
        
